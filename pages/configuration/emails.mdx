@@ -7,8 +7,15 @@ Postiz supports two email providers: Resend and NodeMailer (SMTP).
 
 If you have an email provider configured, then new users will require activation.
 
-```
+```env
 EMAIL_PROVIDER: "resend|nodemailer"
+```
+
+You can set the sender name and email address for all providers as follows;
+
+```env
+EMAIL_FROM_NAME: "Postiz Emailer"
+EMAIL_FROM_ADDRESS: "postiz@example.com"
 ```
 
 ## Resend
