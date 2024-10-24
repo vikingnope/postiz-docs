@@ -10,6 +10,9 @@ import { Steps } from 'nextra/components'
 <EarlyDoc />
 
 ## How to add Nginx as a reverse proxy
+<Callout type="info" emoji="ℹ️">
+  The following commands are tailored for Ubuntu/Debian systems. If you're using a different Linux distribution, you may need to adjust package management commands accordingly (e.g., `yum` for CentOS, `brew` for macOS).
+</Callout>
 
 <Steps>
 ### Install Nginx:
@@ -25,13 +28,38 @@ sudo apt update && sudo apt install python3-certbot-nginx -y
 ```bash
 sudo mkdir -p /var/www/certbot/.well-known/acme-challenge && sudo chown -R www-data:www-data /var/www/certbot
 ```
-### Create a Nginx config:
+### Create a temporary Nginx config for creating SSL certificates
 <Callout>
   Make sure to change subdomain.domain.tld to your actual subdomain and ensure that it is pointed to your server's IP address.
 </Callout>
-```bash
-sudo nano /etc/nginx/sites-available/<subdomain.domain.tld>
+**Edit the file** `/etc/nginx/sites-available/subdomain.domain.tld` (e.g., use `sudo nano /etc/nginx/sites-available/subdomain.domain.tld` if you're using `nano`).
+```nginx
+    server {
+        listen 80;
+        listen [::]:80;  # IPv6 support
+        server_name <subdomain.domain.tld>;  # CHANGE HERE
+
+        location /.well-known/acme-challenge/ {
+            root /var/www/certbot;
+        }
+
+        location / {
+            return 301 https://$host$request_uri;
+        }
+
+        # Hide NGINX version for security reasons
+        server_tokens off;
+    }
 ```
+```bash
+sudo ln -s /etc/nginx/sites-available/<subdomain.domain.tld> /etc/nginx/sites-enabled/
+```
+### Obtain SSL Certificates Using Webroot method:
+```bash
+sudo certbot certonly --webroot -w /var/www/certbot -d <subdomain.domain.tld> --email your-email@example.com --agree-tos --no-eff-email
+```
+### Edit the Nginx config:
+**Edit the file** `/etc/nginx/sites-available/subdomain.domain.tld` (e.g., use `sudo nano /etc/nginx/sites-available/subdomain.domain.tld` if you're using `nano`).
 Copy your config from here:
 <Tabs items={['More "robust" and secure config (recommended)', 'Simple config']}>
   
@@ -43,16 +71,16 @@ Copy your config from here:
         listen [::]:80;  # IPv6 support
         server_name <subdomain.domain.tld>;  # CHANGE HERE
 
-        # Hide NGINX version
-        server_tokens off;
-
-        # Location for Let's Encrypt validation
         location /.well-known/acme-challenge/ {
             root /var/www/certbot;
         }
 
-        # Redirect all HTTP requests to HTTPS
-        return 301 https://$host$request_uri;  
+        location / {
+            return 301 https://$host$request_uri;
+        }
+
+        # Hide NGINX version for security reasons
+        server_tokens off;
     }
 
     # HTTPS Configuration
@@ -175,10 +203,6 @@ Copy your config from here:
     ```
   </Tabs.Tab>
 </Tabs>
-```bash
-sudo ln -s /etc/nginx/sites-available/<subdomain.domain.tld> /etc/nginx/sites-enabled/
-```
-
 ### Generate DH Parameters:
 (Needed if you are using the "robust" nginx config option)
 ```bash
@@ -187,10 +211,6 @@ sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 ### Test your Nginx configuration:
 ```bash
 sudo nginx -t
-```
-### Obtain SSL Certificates Using Webroot method:
-```bash
-sudo certbot certonly --webroot -w /var/www/certbot -d <subdomain.domain.tld> --email your-email@example.com --agree-tos --no-eff-email
 ```
 ### Automatic reload Nginx when SSL Certificates are renewed:
 ```bash
