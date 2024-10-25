@@ -1,0 +1,30 @@
+---
+title: Pinterest
+description: How to add Pinterest to your system
+---
+
+import {Steps, Callout} from "nextra/components";
+
+<Callout>
+This integration requires that you have a Pinterest Company Account.
+</Callout>
+
+<Steps>
+
+### Step 1 Create Pinterest App
+Head to [Pinterest Developer Dashboard](https://developers.pinterest.com/apps/) and create your App. Fill out all reqiured Information and wait on the App to get approved.
+
+### Step 2 Copy the App ID and Secret
+Copy the App ID at "App id" and the Secret Key at "App secret key"
+
+### Step 3 Configure Redirect URI
+Add your Redirect URI at "Redirect URIs" with the default URI "http://localhost:4200/integrations/social/pinterest
+
+
+</Steps>
+
+
+```env
+YPINTEREST_CLIENT_ID=""
+PINTEREST_CLIENT_SECRET=""
+```
