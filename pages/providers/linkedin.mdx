@@ -12,9 +12,13 @@ Fill in all the details, once created head over to Products and make sure you ad
 It is important to request the Advertising API permissions and fill up the request form, or you will not have the ability to refresh your tokens.
 
 Make sure your redirect URL is set to `http://localhost:4200/integrations/social/linkedin` for local development.
+
+For production environments set the URL redirection to 'https://YOURDOMAIN/integrations/social/linkedin' or 'https://YOURDOMAIN/integrations/social/linkedin-pages'
+
 Copy the created `Client ID` and `Client Secret` and add them to your `.env` file.
 
 ```env
 LINKEDIN_CLIENT_ID=""
 LINKEDIN_CLIENT_SECRET=""
 ```
+You can find those under the Auth Tab of your LinkedIn App in the developer portal.
