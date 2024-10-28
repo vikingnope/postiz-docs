@@ -30,6 +30,7 @@ graph TD;
 	subgraph "Postiz Container"
 	C -->|4200/tcp| D[Frontend Service]
 	C -->|3000/tcp| E[Backend Service]
+    C -->|/api| H[uploads]
 	end
 
 	E -->|5432/tcp| F[Postgres Container]
