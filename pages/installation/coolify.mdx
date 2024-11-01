@@ -30,9 +30,9 @@ services:
     restart: always
     environment:
       # You must change these. `yourServerAddress` is what your web browser uses.
-      MAIN_URL: "https://yourServerAddress:4200"
-      FRONTEND_URL: "https://yourServerAddress:4200"
-      NEXT_PUBLIC_BACKEND_URL: "https://yourServerAddress:3000"
+      MAIN_URL: "https://postiz.your-server.com"
+      FRONTEND_URL: "https://postiz.your-server.com"
+      NEXT_PUBLIC_BACKEND_URL: "https://postiz.your-server.com/api"
       JWT_SECRET: "random string that is unique to every install - just type random characters here!"
 
       # These defaults are probably fine, but if you change your user/password, update it in the 
