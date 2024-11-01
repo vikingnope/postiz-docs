@@ -27,6 +27,10 @@ DISCORD_CLIENT_ID="your_client_id"
 DISCORD_CLIENT_SECRET="your_client_secret"
 ```
 
+### Add a Redirect URI
+
+The redirect URI is the URL that Discord will redirect to after you have logged in. Assuming you are runnning Postiz on `postiz.example.com`, this would be: `https://postiz.example.com/integrations/social/discord`. Alternatively if you are running on `localhost:4200`, this would be `http://localhost:4200/integrations/social/discord`.
+
 ### Create a Bot
 
 Navigate to the "Bot" section of the Discord Developer Portal. Fill out the bot details however you like, and then click "Reset Token".
@@ -40,10 +44,6 @@ DISCORD_BOT_TOKEN_ID="your_bot_token"
 If you do not set this, you will get 404 errors when trying to add the Discord channel in the Postiz web interface.
 
 Stop Postiz if it is running, and then start it using the .env file with the Discord details.
-
-### Add a Redirect URI
-
-The redirect URI is the URL that Discord will redirect to after you have logged in. Assuming you are runnning Postiz on `postiz.example.com`, this would be: `https://postiz.example.com/integrations/social/discord`. Alternatively if you are running on `localhost:4200`, this would be `http://localhost:4200/integrations/social/discord`.
 
 ### Add a Discord channel in the Postiz web interface
 
