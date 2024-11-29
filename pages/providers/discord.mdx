@@ -29,7 +29,11 @@ DISCORD_CLIENT_SECRET="your_client_secret"
 
 ### Add a Redirect URI
 
-The redirect URI is the URL that Discord will redirect to after you have logged in. Assuming you are runnning Postiz on `postiz.example.com`, this would be: `https://postiz.example.com/integrations/social/discord`. Alternatively if you are running on `localhost:4200`, this would be `http://localhost:4200/integrations/social/discord`.
+The redirect URI is the URL that Discord will redirect to after you have logged in. Assuming you are running Postiz on `postiz.example.com`, this would be: `https://postiz.example.com/integrations/social/discord`. Alternatively if you are running on `localhost:4200`, this would be `http://localhost:4200/integrations/social/discord`. You only really need one of these, depending on where you are running Postiz.
+
+You can find this in the **OAuth2** section of the Discord Developer Portal.
+
+![Redirect URI](./discord_redirect_uri.png)
 
 ### Create a Bot
 
