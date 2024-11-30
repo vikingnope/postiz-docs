@@ -1,4 +1,4 @@
-{
+export default {
   "introduction": "Introduction",
   "howitworks": "How it works",
   "quickstart": "Quickstart",
@@ -6,5 +6,6 @@
   "reverse-proxies": "Reverse Proxies",
   "configuration": "Configuration",
   "providers": "Providers Configuration",
-  "support": "Support"
-}
+  "support": "Support",
+  "developer-guide": "Developer Guide"
+};
