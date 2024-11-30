@@ -65,15 +65,17 @@ const themeConfig: DocsThemeConfig = {
   },
   docsRepositoryBase: "https://github.com/gitroomhq/postiz-docs/blob/main",
   footer: {
-    text: "Gitroom Limited. All rights reserved.",
+    content: "Gitroom Limited. All rights reserved.",
   },
   darkMode: false,
   nextThemes: {
     defaultTheme: "dark",
     forcedTheme: "dark",
   },
-  primaryHue: 280,
-  primarySaturation: 100,
+  color: {
+	  hue: 280,
+	  saturation: 100,
+  }
 };
 
 export default themeConfig;
