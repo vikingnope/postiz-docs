@@ -4,6 +4,7 @@ description: How to add Facebook to your system
 ---
 
 import {Steps, Callout} from "nextra/components";
+import OAuth2Redirect from "../../components/snippets/oauth2redirect.tsx";
 
 <Callout type="warning">
 	**NOTE:** Please be advised that Instagram and Facebook can use the same app (no need to create two separate apps)
@@ -42,7 +43,7 @@ Set up login for business
 Set up a redirect URI back to the application
 ![step 6](https://github.com/user-attachments/assets/8bf1774b-b6fe-4ac6-aea5-97d8c8bbf5da)
 
-The default dev container redirect URI is `http://localhost:4200/integrations/social/facebook`
+<OAuth2Redirect provider = "facebook" />
 
 ### Step 7
 ![step 7](https://github.com/user-attachments/assets/a81aa2a3-de66-4099-906b-b78c641d1a23)

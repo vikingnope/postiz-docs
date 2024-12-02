@@ -3,6 +3,8 @@ title: X
 description: How to add X to your system
 ---
 
+import OAuth2Redirect from "../../components/snippets/oauth2redirect.tsx";
+
 X is a bit different.<br />
 They created an oAuth2 flow, but it works only with Twitter v2 API.<br />
 But in order to upload pictures to X, you need to use the old Twitter v1 API.<br />
@@ -21,7 +23,10 @@ The click to set up an authentication flow
 
 In the App Permission set it to `Read and Write`
 In the Type of App set it to `Web App, Automated App or Bot`
-In the App Info set the `Callback URI / Redirect URL` to `http://localhost:4200/integrations/social/x`
+In the App Info set the `Callback URI / Redirect URL`.
+
+<OAuth2Redirect provider = "x" />
+
 Save it and go to "Keys and Tokens" tab
 
 Click on "Regenerate" inside "Consumer Keys" and copy the `API Key` and `API Key Secret`.

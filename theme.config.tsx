@@ -3,11 +3,6 @@ import { useRouter } from "next/router";
 import { DocsThemeConfig, useConfig } from "nextra-theme-docs";
 
 const themeConfig: DocsThemeConfig = {
-  useNextSeoProps() {
-    return {
-      titleTemplate: "%s – Postiz Docs",
-    };
-  },
   head: () => {
     const router = useRouter();
     const { title, ...rest } = useConfig();
@@ -15,7 +10,7 @@ const themeConfig: DocsThemeConfig = {
     const pagePath = router.asPath;
     const ogImageUrl = `https://docs.postiz.com/api/opengraph-image?title=${title}`;
 
-    const ogTitle = `${title} - Postiz`;
+    const ogTitle = `${title} - Postiz Docs`;
 
     return (
       <>

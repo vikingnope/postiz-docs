@@ -3,8 +3,12 @@ title: Reddit
 description: How to add Reddit to your system
 ---
 
+import OAuth2Redirect from "../../components/snippets/oauth2redirect.tsx";
+
 Head over to [Reddit developers](https://www.reddit.com/prefs/apps) and create a new app.
-In the type of app, select `web app` and in the redirect uri, add `http://localhost:4200/integrations/social/reddit`.
+In the type of app, select `web app` and in the redirect uri, add your redirect URI.
+
+<OAuth2Redirect provider = "reddit" />
 
 Copy the Reddit client id and client secret and add them to your `.env` file.
 

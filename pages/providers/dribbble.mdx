@@ -4,6 +4,7 @@ description: How to add Dribbble to your system
 ---
 
 import {Steps, Callout} from "nextra/components";
+import OAuth2Redirect from "../../components/snippets/oauth2redirect.tsx";
 
 <Steps>
 
@@ -14,7 +15,9 @@ import {Steps, Callout} from "nextra/components";
 * **Name:** `MyPostizInstance`
 * **Description:** `My Postiz Instance`
 * **Website:** `https://example.com`
-* **Redirect URI:** `http://localhost:4200/integrations/social/dribbble`
+* **Redirect URI:** (see below)
+
+<OAuth2Redirect provider = "dribble" />
 
 ### Copy your client secret to environment variables
 

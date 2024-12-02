@@ -4,6 +4,7 @@ description: How to add Instagram to your system
 ---
 
 import {Steps, Callout} from "nextra/components";
+import OAuth2Redirect from "../../components/snippets/oauth2redirect.tsx";
 
 <Callout type="warning">
 	**NOTE:** Please be advised that Instagram and Facebook can use the same app (no need to create two separate apps)
@@ -42,7 +43,7 @@ Set up login for business
 Set up a redirect URI back to the application
 ![Instagram](https://github.com/user-attachments/assets/78496d3f-3b84-4724-afc8-ed217d892c6d)
 
-The default dev container redirect URI is `http://localhost:4200/integrations/social/instagram`
+<OAuth2Redirect provider = "instagram" />
 
 ### Step 7
 ![step 7](https://github.com/user-attachments/assets/a81aa2a3-de66-4099-906b-b78c641d1a23)

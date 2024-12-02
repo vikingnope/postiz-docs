@@ -5,6 +5,7 @@ description: How to add TikTok to your system
 ---
 
 import {Steps, Callout} from "nextra/components";
+import OAuth2Redirect from "../../components/snippets/oauth2redirect.tsx";
 
 <Callout>
 This integration requires that you have a TikTok developer account. It also requires that you have a public website, with https, and can upload files to that site to verify ownership.
@@ -21,7 +22,9 @@ Go here: https://developers.tiktok.com/apps
 ![Create a new app](./tiktok_create_app.png)
 
 * **App Name:** `MyPostiz`
-* **Redirect URI:** `http://localhost:4200/integrations/social/tiktok`
+* **Redirect URI:** (see below)
+
+<OAuth2Redirect provider = "tiktok" />
 
 ### Set a TOS and Privacy Policy
 

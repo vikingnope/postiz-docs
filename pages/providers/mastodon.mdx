@@ -4,6 +4,7 @@ description: How to add Mastodon to your system
 ---
 
 import {Steps, Callout} from "nextra/components";
+import OAuth2Redirect from "../../components/snippets/oauth2redirect.tsx";
 
 <Callout type="warning">
 	**NOTE:** Postiz is currently hard-coded to use mastodon.social only. This will become more flexible to support other servers in a future release.
@@ -12,6 +13,8 @@ import {Steps, Callout} from "nextra/components";
 Mastodon client registration is not done via ther web interface, but by talking to the API directly. In the example below, we use `curl` to register a new client.
 
 Optionally check that you have `jq` installed on your system. You can normally install this with brew, apt-get, yum or chocolatey. If you don't have `jq` installed, you can remove it from the command below.
+
+<OAuth2Redirect provider = "mastodon" />
 
 Run the following curl command in a terminal to get the Mastodon client id and client secret.
 

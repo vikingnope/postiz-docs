@@ -3,8 +3,8 @@ title: Slack
 description: How to add Slack to your system
 ---
 
-
 import {Steps, Callout} from "nextra/components";
+import OAuth2Redirect from "../../components/snippets/oauth2redirect.tsx";
 
 <Callout>
 This integration requires that you have a Slack Workspace
@@ -16,8 +16,11 @@ This integration requires that you have a Slack Workspace
 Head to [Slack Applications Dashboard](https://api.slack.com/apps) and select "From scratch", fill out all the required Information.
 
 #### Step 2 Set up OAuth Scopes and redirect URIs
+
+<OAuth2Redirect provider = "slack" />
+
 Head to Features > OAuth & Permissions
-1. Add the redirect URI "http://localhost:4200/integrations/social/slack" at Redirect URLs
+1. Add the redirect URI (see above)
 2. At Scopes > Bot Token Scopes, add these Scopes:
   1. "chat:write"
   2. "channels:read"
