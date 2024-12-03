@@ -28,7 +28,7 @@ This example below shows how to create the Postiz container on the command line.
 Note that you will need to replace the `./config` with the path to your config directory. You will also need Postgres and Redis running.
 
 ```bash
-docker create --name postiz -v ./config:/config -p 4200:4200 -p 3000:3000 ghcr.io/gitroomhq/postiz-app:latest
+docker create --name postiz -v postiz-uploads:/uploads/ -v postiz-config:/config/ -p 5000:5000 ghcr.io/gitroomhq/postiz-app:latest
 ```
 
 <DockerEnvvarApps />
