@@ -1,14 +1,13 @@
-import nextra from 'nextra';
+import nextra from "nextra";
 
 const withNextra = nextra({
-  theme: 'nextra-theme-docs',
-  themeConfig: './theme.config.tsx',
+  theme: "nextra-theme-docs",
+  themeConfig: "./theme.config.tsx",
   defaultShowCopyCode: true,
-})
+});
 
 export default withNextra({
-  env: {
-  },
+  env: {},
   async redirects() {
     return [
       {
@@ -16,6 +15,6 @@ export default withNextra({
         destination: "/introduction",
         permanent: false,
       }
-    ]
-  }
+    ];
+  },
 });

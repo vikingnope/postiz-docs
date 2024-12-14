@@ -1,0 +1,161 @@
+---
+title: Public API
+description: "How to use Postiz public API"
+---
+
+## Public API allows you to work with Postiz in headless mode
+
+To use the Public API, go to Postiz settings and copy the API Key.<br />
+With each request you need to pass the API Key in the header `Authorization: {apiKey}`.<br />
+If you are using the hosted version of Postiz the URL will be `https://api.postiz.com/public/v1`.<br />
+If you are self-hosting Postiz the URL will be `https://{NEXT_PUBLIC_BACKEND_URL}/public/v1`.<br /><br />
+
+<u>There is a limit of **30** requests per hours.</u>
+<br />
+Here are the following API endpoints you can use:
+
+<br />
+
+### Get all added integrations
+
+```http
+GET https://api.postiz.com/public/v1/integrations
+```
+
+Response:
+
+```json
+[
+  {
+    "id": "asdfasf2342dsaxfcsf",
+    "name": "Nevo David",
+    "identifier": "facebook",
+    "picture": "https://upload.postiz.com/picture.png",
+    "disabled": false,
+    "profile": "nevo_david",
+    "customer": {
+      "id": "asdfasf2342dsaxfcsfsadfsadf",
+      "name": "My Customer"
+    }
+  }
+]
+```
+
+---
+
+<br />
+
+### Upload a new file (from-data)
+
+```http
+POST https://api.postiz.com/public/v1/upload
+```
+
+Payload:
+`file` - File
+
+Response:
+
+```json
+{
+  "id": "e639003b-f727-4a1e-87bd-74a2c48ae41e",
+  "name": "vXJYn8EzSB.png",
+  "path": "https://uploads.gitroom.com/vXJYn8EzSB.png",
+  "organizationId": "85460a39-6329-4cf4-a252-187ce89a3480",
+  "createdAt": "2024-12-14T08:18:54.274Z",
+  "updatedAt": "2024-12-14T08:18:54.274Z"
+}
+```
+
+---
+
+<br />
+### Post list
+
+```http
+GET https://api.postiz.com/public/v1/posts
+```
+
+Query:
+| Name | Type | Value |
+| --- | --- | --- |
+| display | string | day \| week \| month |
+| day | number | 0-6 |
+| week | number | 1-52 |
+| month | number | 1-12 |
+| year | number | 2022+ |
+
+** day is required if display is day<br />
+** week is required if display is week or day<br />
+** month is required if display is month or week<br />
+** year is required<br /><br />
+
+Response:
+
+```json
+{
+    "posts": [
+        {
+            "id": "cm4gklk8o00008copo77fa0f8",
+            "content": "blabla",
+            "publishDate": "2024-12-09T05:06:00.000Z",
+            "releaseURL": "https://twitter.com/nevodavid/status/1865986385708204316",
+            "state": "QUEUE|PUBLISHED|ERROR|DRAFT",
+            "integration": {
+                "id": "cm4ean69r0003w8w1cdomox9n",
+                "providerIdentifier": "x",
+                "name": "Nevo David",
+                "picture": "https://uploads.gitroom.com/5g9mEIVCAq.jpeg"
+            }
+        }
+    ]
+}
+```
+
+---
+
+<br />
+### Create / update a post
+
+```http
+POST https://api.postiz.com/public/v1/posts
+```
+
+Payload:
+
+```json
+{
+  "type": "draft|schedule|now",
+  "date": "2024-12-14T08:18:54.274Z",
+  "posts": [
+    {
+      "integration": {
+        "id": "asdfsad23rwdfasfsddc"
+      },
+      "value": [
+        {
+          "content": "This is my cool post",
+          "id": "Only if you want to edit and existing post",
+          "image": [
+            {
+              "id": "string"
+            }
+          ]
+        }
+      ],
+      "group": "uniqueId for all the posts in the same group",
+      "settings": {
+        "[key]": "check each integration DTOs in the files, or wait for the error on a new request"
+      }
+    }
+  ]
+}
+```
+
+Response:
+
+```json
+{
+  "id": "e639003b-f727-4a1e-87bd-74a2c48ae41e"
+}
+```
