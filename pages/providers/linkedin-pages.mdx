@@ -1,0 +1,26 @@
+---
+title: Linkedin
+description: How to add Linkedin to your system
+---
+
+import OAuth2Redirect from "../../components/snippets/oauth2redirect.tsx";
+
+Head over to [Linkedin developers](https://www.linkedin.com/developers/apps) and create a new app.
+![Linkedin](/images/providers/linkedin/linkedin-001.png)
+
+Fill in all the details, once created head over to Products and make sure you add all the required products.
+![Linkedin](/images/providers/linkedin/linkedin-002.png)
+
+It is important to request the Advertising API permissions and fill up the request form, or you will not have the ability to refresh your tokens.
+
+<OAuth2Redirect provider = "linkedin" />
+
+If you are using the "LinkedIN Page" provider, then the redirect url should be "linkedin-page".
+
+Copy the created `Client ID` and `Client Secret` and add them to your `.env` file.
+
+```env
+LINKEDIN_CLIENT_ID=""
+LINKEDIN_CLIENT_SECRET=""
+```
+You can find those under the Auth Tab of your LinkedIn App in the developer portal.
