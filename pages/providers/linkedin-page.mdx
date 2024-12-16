@@ -8,7 +8,10 @@ import OAuth2Redirect from "../../components/snippets/oauth2redirect.tsx";
 Head over to [Linkedin developers](https://www.linkedin.com/developers/apps) and create a new app.
 ![Linkedin](/images/providers/linkedin/linkedin-001.png)
 
-Verify your app with Linkedin 
+Verify your app with Linkedin
+![Linkedin](/images/providers/linkedin/linkedin-004.png)
+
+You will need to follow the verification process to request the necessary permissions listed below. 
 
 Fill in all the details, once created head over to Products and make sure you add all the required products.
 ![Linkedin](/images/providers/linkedin/linkedin-003.png)
@@ -17,7 +20,6 @@ It is important to request the Advertising API permissions and fill up the reque
 
 <OAuth2Redirect provider = "linkedin-page" />
 
-If you are using the "LinkedIN Page" provider, then the redirect url should be "linkedin-page".
 
 Copy the created `Client ID` and `Client Secret` and add them to your `.env` file.
 
