@@ -1,6 +1,6 @@
 ---
-title: Linkedin
-description: How to add Linkedin to your system
+title: Linkedin Page
+description: How to add a Linkedin Page to your system
 ---
 
 import OAuth2Redirect from "../../components/snippets/oauth2redirect.tsx";
@@ -8,12 +8,14 @@ import OAuth2Redirect from "../../components/snippets/oauth2redirect.tsx";
 Head over to [Linkedin developers](https://www.linkedin.com/developers/apps) and create a new app.
 ![Linkedin](/images/providers/linkedin/linkedin-001.png)
 
+Verify your app with Linkedin 
+
 Fill in all the details, once created head over to Products and make sure you add all the required products.
-![Linkedin](/images/providers/linkedin/linkedin-002.png)
+![Linkedin](/images/providers/linkedin/linkedin-003.png)
 
 It is important to request the Advertising API permissions and fill up the request form, or you will not have the ability to refresh your tokens.
 
-<OAuth2Redirect provider = "linkedin" />
+<OAuth2Redirect provider = "linkedin-page" />
 
 If you are using the "LinkedIN Page" provider, then the redirect url should be "linkedin-page".
 
