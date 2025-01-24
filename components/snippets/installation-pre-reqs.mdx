@@ -6,11 +6,12 @@ This section will ask you to install & configure several services exaplained bel
 
 #### HTTPS is required (or localhost)
 
-Postiz marks it's login cookies as Secure, which means you must run it either on localhost, or behind HTTPS -  this is called a "secure context" in modern web browsers.
+Postiz marks it's login cookies as Secure, this is called “secure context” in modern web browsers.
 
-If you are not running either HTTPS or on localhost, then you will not be able to login, as your browser will refuse to send the login cookie.
+If you want to use an secure Login Process, you need to set up an Certificate, which can be done via Reverse Proxy like Caddy or Nginx.
 
-Postiz will not generate your HTTPS certificates for you, and it's servers cannot yet be configured to use a HTTPS certificate. This means you must use a reverse proxy to handle HTTPS. Documentation on popular reverse proxies can be found in the [reverse proxies](/reverse-proxies/) section, and if you've never used a reverse proxy with docker compose before, then [caddy](/reverse-proxies/caddy/) is recommended.
+If you are not able to use an Certificate (https), then you need to add this Enviroment Variable to the .env File.
+`NOT_SECURED=true`
 
 #### Network Ports
 
