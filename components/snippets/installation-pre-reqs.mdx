@@ -10,8 +10,9 @@ Postiz marks it's login cookies as Secure, this is called “secure context” i
 
 If you want to use an secure Login Process, you need to set up an Certificate, which can be done via Reverse Proxy like Caddy or Nginx.
 
-If you are not able to use an Certificate (https), then you need to add this Enviroment Variable to the .env File.
+If you cannot use a certificate (HTTPS), add the following environment variable to your `.env` file:
 `NOT_SECURED=true`
+**Security Warning**: Setting `NOT_SECURED=true` disables secure cookie requirements. This should only be used in development environments or when you fully understand the security implications. Not recommended for production use.
 
 #### Network Ports
 
