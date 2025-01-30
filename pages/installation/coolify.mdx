@@ -33,7 +33,7 @@ services:
     container_name: postiz
     restart: always
     environment:
-      # You must change these. `yourServerAddress` is what your web browser uses.
+      # You must change these. `yourServerAddress` this needs to be exactly the URL you're accessing Postiz on.
       MAIN_URL: "https://postiz.your-server.com"
       FRONTEND_URL: "https://postiz.your-server.com"
       NEXT_PUBLIC_BACKEND_URL: "https://postiz.your-server.com/api"
