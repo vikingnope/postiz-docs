@@ -1,9 +1,11 @@
+
 ---
 title: YouTube
 description: How to add YouTube to your system
 ---
 
 import {Steps, Callout} from "nextra/components";
+import OAuth2Redirect from "../../components/snippets/oauth2redirect.tsx";
 
 <Callout>
 This integration requires that you have a Google account.
@@ -36,10 +38,6 @@ Under "Authorized redirect URIs", insert your OAuth2 Redirect URI.
 ### Add a Redirect URI
 
 <OAuth2Redirect provider = "youtube" />
-
-The redirect URI is the URL that YouTube will redirect to after you have logged in. Assuming you are running Postiz on `postiz.example.com`, this would be: `https://postiz.example.com/integrations/social/youtube`. Alternatively if you are running on `localhost:4200`, this would be `http://localhost:4200/integrations/social/youtube`. You only really need one of these, depending on where you are running Postiz.
-
-You can find this in the **OAuth2** section of the Discord Developer Portal.
 
 ### Step 7 Activate YouTubes API
 Go to Activated APIs and Services. Then click on Activate APIs and Services. Search YouTube Data API v3 and activate the API by clicking it and clicking Activate.
