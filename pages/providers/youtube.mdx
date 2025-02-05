@@ -31,6 +31,13 @@ Make sure that your consent screen has been configured. Add yourself as a test u
 ### Step 6 Fill in OAuth Details
 Create the OAuth client ID. Select "Web application" as the application type and fill in the details.
 
+Under "Authorized redirect URIs", insert your OAuth2 Redirect URI.
+
+The OAuth2 Redirect URI is the location where the provider will redirect to after trying to login. This needs to set to your Postiz FRONTEND_URL + /integrations/social/ + youtube.
+
+eg: If you are running on a container, and your Postiz URL is: https://postiz.example.com, then your OAuth2 Redirect URI is https://postiz.example.com/integrations/social/youtube
+eg: If you are running on localhost, and your Postiz URL is http://localhost:4200, then your OAuth2 Redirect URI is http://localhost:4200/integrations/social/linkedin-page
+
 ### Step 7 Activate YouTubes API
 Go to Activated APIs and Services. Then click on Activate APIs and Services. Search YouTube Data API v3 and activate the API by clicking it and clicking Activate.
 Do the same Process with YouTube Analytics API and YouTube Reporting API.
