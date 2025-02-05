@@ -33,10 +33,13 @@ Create the OAuth client ID. Select "Web application" as the application type and
 
 Under "Authorized redirect URIs", insert your OAuth2 Redirect URI.
 
-The OAuth2 Redirect URI is the location where the provider will redirect to after trying to login. This needs to set to your Postiz FRONTEND_URL + /integrations/social/ + youtube.
+### Add a Redirect URI
 
-eg: If you are running on a container, and your Postiz URL is: https://postiz.example.com, then your OAuth2 Redirect URI is https://postiz.example.com/integrations/social/youtube
-eg: If you are running on localhost, and your Postiz URL is http://localhost:4200, then your OAuth2 Redirect URI is http://localhost:4200/integrations/social/youtube
+<OAuth2Redirect provider = "youtube" />
+
+The redirect URI is the URL that YouTube will redirect to after you have logged in. Assuming you are running Postiz on `postiz.example.com`, this would be: `https://postiz.example.com/integrations/social/youtube`. Alternatively if you are running on `localhost:4200`, this would be `http://localhost:4200/integrations/social/youtube`. You only really need one of these, depending on where you are running Postiz.
+
+You can find this in the **OAuth2** section of the Discord Developer Portal.
 
 ### Step 7 Activate YouTubes API
 Go to Activated APIs and Services. Then click on Activate APIs and Services. Search YouTube Data API v3 and activate the API by clicking it and clicking Activate.
