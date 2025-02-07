@@ -145,6 +145,9 @@ Copy your config from here:
         # Disable directory listing for security
         autoindex off;
 
+        # Increase maximum post size to prevent 413 error with images larger than 2MB (changes max size to 100MB)
+        client_max_body_size 100M;
+
         # Enable Gzip compression for better performance
         gzip on;
         gzip_comp_level 6;
