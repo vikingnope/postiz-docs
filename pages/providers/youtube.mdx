@@ -1,7 +1,7 @@
 
 ---
 title: YouTube
-description: How to add YouTube to your system
+description: How to Add YouTube to Your System
 ---
 
 import {Steps, Callout} from "nextra/components";
@@ -33,11 +33,11 @@ Make sure that your consent screen has been configured. Add yourself as a test u
 ### Step 6 Fill in OAuth Details
 Create the OAuth client ID. Select "Web application" as the application type and fill in the details.
 
+<OAuth2Redirect provider = "youtube" />
+
 Under "Authorized redirect URIs", insert your OAuth2 Redirect URI.
 
-### Add a Redirect URI
-
-<OAuth2Redirect provider = "youtube" />
+![YouTube](/images/providers/youtube/youtube-001.png)
 
 ### Step 7 Activate YouTubes API
 Go to Activated APIs and Services. Then click on Activate APIs and Services. Search YouTube Data API v3 and activate the API by clicking it and clicking Activate.
