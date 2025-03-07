@@ -3,6 +3,12 @@ title: Public API
 description: "How to use Postiz public API"
 ---
 
+import {Callout} from 'nextra/components';
+
+<Callout type="warning">
+	**Warning:** This Feature is currently in Beta and is in active-development. It does **not** provide all of the Postiz Features currently.
+</Callout>
+
 ## Public API allows you to work with Postiz in headless mode
 
 To use the Public API, go to Postiz settings and copy the API Key.<br />
@@ -10,7 +16,7 @@ With each request you need to pass the API Key in the header `Authorization: {ap
 If you are using the hosted version of Postiz the URL will be `https://api.postiz.com/public/v1`.<br />
 If you are self-hosting Postiz the URL will be `https://{NEXT_PUBLIC_BACKEND_URL}/public/v1`.<br /><br />
 
-<u>There is a limit of **30** requests per hours.</u>
+<u>There is a limit of **30** requests per hour.</u>
 <br />
 Here are the following API endpoints you can use:
 
