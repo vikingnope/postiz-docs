@@ -9,7 +9,7 @@ import OAuth2Redirect from "../../components/snippets/oauth2redirect.tsx";
 <Callout>
 This integration requires that you have setup a Facebook developer account already. You can start by going to the [Meta/Facebook Developer Portal](https://developers.facebook.com/apps).
 
-This is a very complex integration, and it may take some time to get it right. If you have any issues, please reach out to us on the Postiz Discord. This documentation is not yet complete sadly, because at the time of writing the Threads API seems like it's having issues. This page was written to get something up to get you started.
+This is a complex integration, and it may take some time to get it right. If you have any issues, please reach out to us on the Postiz Discord. This documentation is not fully complete, because at the time of writing the Threads API seems like it's having issues. This page was written to get something up to get you started.
 </Callout>
 
 <Steps>
@@ -48,7 +48,7 @@ Add the "threads_content_publish" and "threads_basic" (automatically selected) t
 
 ### Set threads API settings
 
-* Copy your "Threads App ID", and set the postiz environment variables `THREADS_APP_ID` to this value.
+* Click the "Settings" tab. Copy your "Threads App ID", and set the postiz environment variables `THREADS_APP_ID` to this value.
 * Click the "Show" button next to the Threads App Secret, and set the postiz environment variable `THREADS_APP_SECRET` to this value. Note that the next box is quite small, make sure you scroll across the copy the full value. It should be 32 characters long.
 
 <OAuth2Redirect provider = "threads" />
@@ -58,7 +58,7 @@ Add the "threads_content_publish" and "threads_basic" (automatically selected) t
 
 ![Set threads API settings](./threads_api_settings.png)
 
-On the dashboard view of the Facebook developers portal, make sure you click through the setup wizard to finish the step "Yes I am finished creating the app" to complete the setup. The AP may not work until you've done this.
+Go back to the 'Dashboard' view of the Facebook developers portal, click "Finish customization" sure you click through the setup wizard to finish the step "Yes I'm finished" to complete the setup. The AP may not work until you've done this. Ignore "Test use cases" for now as it will not work until you have created a test user (see later).
 
 ### Restart Postiz
 
@@ -88,13 +88,12 @@ You should not try to add a Threads account to Postiz at this time.
 
 ![API Version](./threads_api_version.png)
 
-* In the right sidebar, under *Access Token*, click *Generate Threads Access Token*. This will open a new window where you can select the Threads account you want to test with - it should be an account that accepted the earlier invite. 
+* In the right sidebar, under *Access Token*, click *Generate Threads Access Token*. This will open a new window where you can select the Threads account you want to test with - it should be an account that accepted the earlier invite. If everything has worked successfully you should be provided with a very long alphanumeric access token - you do not need to do anything with this, but it proves things are working correctly.
 
 ### ...Good luck!
 
-This documentation is not yet complete sadly, because at the time of writing the Threads API seems like it's having issues. This page was written to get something up to get you started.
+At this stage things should be working correctly, try a test post from Postiz to confirm. 
 
-This is a very complex integration, and it may take some time to get it right. If you have any issues, please reach out to us on the Postiz Discord.
+This is a complex integration, and it may take some time to get it right. If you have any issues, please reach out to us on the Postiz Discord.
 
 </Steps>
-
