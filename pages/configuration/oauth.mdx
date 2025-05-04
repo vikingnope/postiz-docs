@@ -10,13 +10,13 @@ import { Steps, Callout } from "nextra/components";
   provider will be disabled.
 </Callout>
 
-If you want to use OAUTH/OIDC, please follow the following instruction.
+If you want to use OAuth/OIDC, please follow the instructions below.
 
-We will use [Authentik](https://goauthentik.io/) as OIDC provider example, with base URL `https://authentik.example.com`
+We will use [Authentik](https://goauthentik.io/) as an OIDC provider example, with base URL `https://authentik.example.com`
 
 <Steps>
 
-### Create an Application/Provider on Authentik side
+### Create an Application/Provider on the Authentik side
 
 You will find the following important information:
 
@@ -30,7 +30,7 @@ You will find the following important information:
 
 - `userinfo_url`=> `https://authentik.example.com/application/o/userinfo/`
 
-**Note**: same information need to be configured on other OIDC provider like Keycloak, Dex, etc.
+**Note**: the same information needs to be configured on other OIDC providers such as Keycloak, Dex, etc.
 
 ### `POSTIZ_GENERIC_OAUTH`
 
@@ -42,13 +42,13 @@ Set to `true` to enable OIDC login.
 
 eg: `Authentik`
 
-Will display the name the of the OIDC provider on login page.
+Will display the name of the OIDC provider on the login page.
 
 ### `NEXT_PUBLIC_POSTIZ_OAUTH_LOGO_URL`
 
 eg: `https://raw.githubusercontent.com/walkxcode/dashboard-icons/master/png/authentik.png`
 
-Will display the logo of the OIDC provider oon login page button.
+Will display the logo of the OIDC provider on the login page button.
 
 ### `POSTIZ_OAUTH_URL`
 
