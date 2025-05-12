@@ -6,8 +6,12 @@ description: How to configure OIDC
 import { Steps, Callout } from "nextra/components";
 
 <Callout type="warning">
-  **Warning:** With the actual implementation of the OIDC provider, GitHub login
+  **Warning:** With the actual implementation of the OIDC provider, GitHub / Google login
   provider will be disabled.
+</Callout>
+
+<Callout type="warning">
+  **Warning:** Do not use any trailing slashes ("/") at the end of any OIDC Variables.
 </Callout>
 
 If you want to use OAuth/OIDC, please follow the instructions below.
@@ -20,15 +24,17 @@ We will use [Authentik](https://goauthentik.io/) as an OIDC provider example, wi
 
 You will find the following important information:
 
+- `redirect_uri` => `https://postiz.yourserver.com/settings`
+
 - `client_id` => `randomclientid`
 
 - `client_secret` => `randomclientsecret`
 
-- `auth_url` => `https://authentik.example.com/application/o/authorize/`
+- `auth_url` => `https://authentik.example.com/application/o/authorize`
 
-- `token_url` => `https://authentik.example.com/application/o/token/`
+- `token_url` => `https://authentik.example.com/application/o/token`
 
-- `userinfo_url`=> `https://authentik.example.com/application/o/userinfo/`
+- `userinfo_url`=> `https://authentik.example.com/application/o/userinfo`
 
 **Note**: the same information needs to be configured on other OIDC providers such as Keycloak, Dex, etc.
 
