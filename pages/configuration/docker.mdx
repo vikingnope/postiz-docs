@@ -1,0 +1,56 @@
+---
+title: Docker Compose Configuration
+description: How to configure your docker-compose file for Postiz
+---
+
+You will often see, when for example configuring providers, that the environment variables will look like this:
+```env
+INSTAGRAM_CLIENT_ID=12345678901234567890
+```
+You have 2 options on how to set these variables in your `docker-compose.yml` file.
+
+1. You can set them directly in the `environment` section of the service.
+
+docker-compose.yml:
+```yaml
+services:
+  postiz:
+    environment:
+      YOUR_ENV_VAR: "value"
+      YOUR_OTHER_ENV_VAR: "value"
+```
+
+2. You can use a `.env` file to set the variables.
+
+docker-compose.yml:
+```yaml
+services:
+  postiz:
+    env_file:
+      - .env
+```
+.env:
+```env
+YOUR_ENV_VAR=value
+YOUR_OTHER_ENV_VAR=value
+```
+
+3. You can also use both!
+
+docker-compose.yml:
+```yaml
+services:
+  postiz:
+    environment:
+      YOUR_ENV_VAR: "value"
+    env_file:
+      - .env
+```
+.env:
+```env
+YOUR_OTHER_ENV_VAR=value
+```
+
+Now you need to note that when using an .env file, you will need to transder all enviroment variables from the docker-compose.yml file to the .env file.
+An .env file will ovveride any variables set in the .yml file.
+Using an .env file for the DB / Redis wont be neccessary.
